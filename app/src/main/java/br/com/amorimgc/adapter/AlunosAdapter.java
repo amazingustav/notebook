@@ -54,6 +54,8 @@ public class AlunosAdapter extends BaseAdapter{
 
         if (view == null)
             view = inflater.inflate(R.layout.list_item, parent, false);
+        //FIXME: implementar binding ao invés de buscar campos por findViewById
+
         /*
         ListItemBinding binding = DataBindingUtil.inflate(
                 LayoutInflater.from(parent.getContext()), R.layout.list_item, parent, false);
@@ -75,7 +77,7 @@ public class AlunosAdapter extends BaseAdapter{
         telefone.setText(aluno.getTelefone());
 
         String caminhoFoto = aluno.getCaminhoFoto();
-        if (caminhoFoto != null) {
+        if (!caminhoFoto.equals("null")) {
             Bitmap bitmap = BitmapFactory.decodeFile(caminhoFoto);
             Bitmap bitmapReduzido = Bitmap.createScaledBitmap(bitmap, 100, 100, true);
             foto.setImageBitmap(bitmapReduzido);
