@@ -98,4 +98,13 @@ public class AlunoDAO extends SQLiteOpenHelper{
 
         return dados;
     }
+
+    public boolean isAluno(String telefone) {
+        SQLiteDatabase db = getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * FROM Alunos WHERE telefone = ?;", new String[]{telefone});
+        boolean retorno = cursor.getCount() > 0;
+        cursor.close();
+
+        return retorno;
+    }
 }
