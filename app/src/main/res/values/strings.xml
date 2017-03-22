@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Agenda</string>
+    <string name="name_formulario">Formulário</string>
+    <string name="lbl_call">Ligar</string>
+    <string name="lbl_send_sms">Enviar SMS</string>
+    <string name="lbl_view_map">Visualizar no Mapa</string>
+    <string name="lbl_site">Visitar site</string>
+    <string name="lbl_delete">Excluir</string>
+    <string name="lbl_sms">Enviar SMS</string>
+</resources>
