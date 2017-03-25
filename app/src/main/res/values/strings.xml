@@ -7,4 +7,5 @@
     <string name="lbl_site">Visitar site</string>
     <string name="lbl_delete">Excluir</string>
     <string name="lbl_sms">Enviar SMS</string>
+    <string name="enviar_notas">Enviar notas</string>
 </resources>

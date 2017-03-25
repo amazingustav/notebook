@@ -9,18 +9,21 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.ContextMenu;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
 import java.util.List;
 
 import br.com.amorimgc.adapter.AlunosAdapter;
+import br.com.amorimgc.converter.AlunoConverter;
 import br.com.amorimgc.agenda.databinding.ActivityListaAlunosBinding;
 import br.com.amorimgc.dao.AlunoDAO;
 import br.com.amorimgc.model.Aluno;
+import br.com.amorimgc.service.EnviaAlunosTask;
+import br.com.amorimgc.service.WebClient;
 
 /**
  * Created by Gustavo Amorim on 14/03/2017.
@@ -53,6 +56,25 @@ public class ListaAlunosActivity extends AppCompatActivity
     protected void onResume() {
         super.onResume();
         this.popularLista();
+    }
+
+    // Cria as opções do menu "Settings"
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_lista_alunos, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.menu_enviar_notas:
+                new EnviaAlunosTask(this).execute();
+
+                break;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 
     // Cria as opções do menu de contexto.
