@@ -1,1 +1,1 @@
-include ':app', ':phonemask'
+include ':app'
