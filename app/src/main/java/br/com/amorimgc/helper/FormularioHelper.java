@@ -55,7 +55,7 @@ public class FormularioHelper {
 
     // Preenche a imagem no ImageView.
     public void carregarImagem(String caminhoFoto) {
-        if (!caminhoFoto.equals("null")) {
+        if (caminhoFoto != null) {
             Bitmap bitmap = BitmapFactory.decodeFile(caminhoFoto);
             Bitmap bitmapReduzido = Bitmap.createScaledBitmap(bitmap, 300, 300, true);
             foto.setImageBitmap(bitmapReduzido);

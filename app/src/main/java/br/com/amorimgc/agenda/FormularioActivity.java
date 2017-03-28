@@ -80,7 +80,17 @@ public class FormularioActivity extends AppCompatActivity implements View.OnClic
     // Valida dados obrigatórios.
     private boolean validarDados(Aluno aluno) {
         if (aluno.getNome().isEmpty()) {
-            Toast.makeText(this, "O nome é obrigatório!", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Fala quem é você, né?!", Toast.LENGTH_LONG).show();
+            return false;
+        }
+
+        if (aluno.getCaminhoFoto().equals("null")) {
+            Toast.makeText(this, "Tira uma foto, vai?!", Toast.LENGTH_LONG).show();
+            return false;
+        }
+
+        if (aluno.getTelefone().isEmpty()) {
+            Toast.makeText(this, "Coloca seu número aí!", Toast.LENGTH_LONG).show();
             return false;
         }
 

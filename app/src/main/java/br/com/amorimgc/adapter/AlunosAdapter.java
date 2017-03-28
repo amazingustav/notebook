@@ -77,11 +77,11 @@ public class AlunosAdapter extends BaseAdapter{
         telefone.setText(aluno.getTelefone());
 
         String caminhoFoto = aluno.getCaminhoFoto();
-        if (!caminhoFoto.equals("null")) {
+        if (caminhoFoto != null) {
             Bitmap bitmap = BitmapFactory.decodeFile(caminhoFoto);
             Bitmap bitmapReduzido = Bitmap.createScaledBitmap(bitmap, 100, 100, true);
             foto.setImageBitmap(bitmapReduzido);
             foto.setScaleType(ImageView.ScaleType.FIT_XY);
         }
-    }
+     }
 }

@@ -68,7 +68,8 @@ public class AlunoDAO extends SQLiteOpenHelper{
             aluno.setTelefone(cursor.getString(cursor.getColumnIndex("telefone")));
             aluno.setSite(cursor.getString(cursor.getColumnIndex("site")));
             aluno.setNota(cursor.getDouble(cursor.getColumnIndex("nota")));
-            aluno.setCaminhoFoto(cursor.getString(cursor.getColumnIndex("foto")));
+            aluno.setCaminhoFoto(cursor.getString(cursor.getColumnIndex("foto")).equals("null") ?
+                    null : cursor.getString(cursor.getColumnIndex("foto")));
 
             lista.add(aluno);
         }
